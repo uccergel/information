@@ -2,20 +2,34 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 const url = 'http://localhost:3000/employees'
+const initialFormValues = {
+  name: '',
+  surname: '',
+  tckn: '',
+  birthDate: '',
+  bloodGroup: '',
+  phoneNumber: '',
+  email: '',
+  address: '',
+  smartialStatusurname: ''
+}
 
 export default function CreatePersonPage() {
-  const [name, setName] = useState('')
-  const [surname, setSurname] = useState('')
-  const [tckn, setTckn] = useState('')
-  const [birthDate, setBirthDate] = useState('')
-  const [bloodGroup, setBloodGroup] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
-  const [email, setEmail] = useState('')
-  const [address, setAddress] = useState('')
-  const [martialStatus, setMartialStatus] = useState('')
+  const [form, setForm] = useState(initialFormValues)
 
-  const onSave = () => {
-    axios.get(url, ...data)
+  useEffect(() => {
+    setForm(initialFormValues)
+  }, [])
+  const onChangeInput = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    if (form.name === '' || form.surname === '') {
+      return false
+    }
+    console.log(form)
   }
 
   return (
@@ -42,77 +56,71 @@ export default function CreatePersonPage() {
                     <p className="font-semibold">Adresi:</p>
                     <p className="font-semibold">Medeni Durumu:</p>
                   </div>
-                  <form className="flex flex-col space-y-4 my-auto rounded-xl">
+                  <form
+                    className="flex flex-col space-y-4 my-auto rounded-xl"
+                    // onSubmit={onSubmit}
+                  >
                     <input
                       placeholder="Adınızı Yazınız"
                       type="text"
                       name="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="Soyadınızı Yazınız"
                       type="text"
                       name="surname"
-                      value={surname}
-                      onChange={(e) => setSurname(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="TCKN Yazınız"
                       type="text"
                       name="tckn"
-                      value={tckn}
-                      onChange={(e) => setTckn(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="Doğum Tarihinizi Giriniz"
                       type="text"
                       name="birthdate"
-                      value={birthDate}
-                      onChange={(e) => setBirthDate(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="Kan Grubunuzu Seçiniz"
                       type="text"
                       name="bloodgroup"
-                      value={bloodGroup}
-                      onChange={(e) => setBloodGroup(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="Telefon Numaranızı Yazınız"
                       type="text"
                       name="phonenumber"
-                      value={phoneNumber}
-                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="E-Mail Adresinizi Yazınız"
                       type="text"
-                      name="emaik"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      name="email"
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="Adresinizi Yazınız"
                       type="text"
                       name="address"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                     <input
                       placeholder="Medeni Durumunuzu Seçiniz"
                       type="text"
                       name="martialstatus"
-                      value={martialStatus}
-                      onChange={(e) => setMartialStatus(e.target.value)}
+                      onChange={onChangeInput}
                       className="create-input"
                     />
                   </form>
@@ -125,9 +133,8 @@ export default function CreatePersonPage() {
         </div>
       </div>
       <button
-        onClick={onSave}
+        onClick={onSubmit}
         className="bg-[#3C6E71] text-white rounded-md p-1 mr-72"
-        disabled={!name || !surname}
       >
         Oluştur
       </button>

@@ -5,6 +5,7 @@ import PersonInfoPage from '../pages/PersonInfoPage'
 import SurveyAndTestPage from '../pages/SurveyAndTestPage'
 import PerformancePage from '../pages/PerformancePage'
 import CreatePersonPage from '../pages/CreatePersonPage'
+import CreatePersonPageNew from '../pages/CreatePersonPageNew'
 import LoginPage from '../pages/LoginPage'
 
 export default function Header() {
@@ -48,6 +49,12 @@ export default function Header() {
           >
             Test|Anket
           </NavLink>
+          <NavLink
+            className="my-auto hover:bg-[#284B63]/40 hover:shadow-xl rounded-lg p-2 font-bold"
+            to="/create-person-new"
+          >
+            Personel Oluştur Deneme
+          </NavLink>
         </nav>
         <NavLink
           className="mr-2 hover:bg-[#284B63]/40 hover:text-white hover:shadow-xl rounded-lg p-2 font-bold"
@@ -63,6 +70,7 @@ export default function Header() {
         <Route path="/person-list" element={<PersonListPage />} />
         <Route path="/survey-test" element={<SurveyAndTestPage />} />
         <Route path="/create-person" element={<CreatePersonPage />} />
+        <Route path="/create-person-new" element={<CreatePersonPageNew />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </div>
