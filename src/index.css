@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header-width {
+    @apply max-w-5xl mx-auto mb-10 p-5;
+  }
+  .page-container {
+    @apply max-w-7xl mx-auto rounded-xl bg-[#3C6E71]/30 shadow-2xl  h-[1024px] p-3;
+  }
+  .register_card {
+    @apply rounded-xl inset-2/4 m-auto flex w-1/6 flex-col border-[#284B63] p-3 shadow-xl bg-[#3C6E71]/40;
+  }
+  .login_card {
+    @apply rounded-xl inset-2/4 m-auto flex w-1/6 flex-col border-[#284B63] p-3 shadow-xl bg-[#3C6E71]/40;
+  }
+  .performance-page-content {
+    @apply font-bold text-xl hover:shadow-xl hover:bg-[#3C6E71]/30 p-3 rounded-lg cursor-pointer;
+  }
+}
