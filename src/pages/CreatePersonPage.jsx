@@ -1,9 +1,8 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
-
-const url = 'http://localhost:3000/employees'
+import { axiosInstance } from '../utils'
 
 export default function CreatePersonPage() {
+  const [bloodGroups, setBloodGroups] = useState([])
   const [name, setName] = useState('')
   const [surname, setSurname] = useState('')
   const [tckn, setTckn] = useState('')
@@ -14,12 +13,40 @@ export default function CreatePersonPage() {
   const [address, setAddress] = useState('')
   const [martialStatus, setMartialStatus] = useState('')
 
-  const onSave = () => {
-    axios.get(url, ...data)
+  // useEffect(() => {
+  //   const eslestir = () => {
+  //     axiosInstance
+  //       .get('bloodGroup')
+  //       .then((res) => setBloodGroup(res.data))
+  //       .catch((err) => console.log(err))
+  //   }
+  //   bloodGroup?.find((bloodGroup) => bloodGroup?.id === employees?.bloodGroupId)
+  //     ?.name
+  // })
+
+  useEffect(() => {
+    axiosInstance
+      .get('bloodGroup')
+      .then((res) => setBloodGroups(res.data))
+      .catch((err) => console.log(err))
+  }, [])
+  const onSave = async () => {
+    const data = {
+      name,
+      surname,
+      tckn,
+      birthDate,
+      bloodGroup,
+      phoneNumber,
+      email,
+      address,
+      martialStatus
+    }
+    await axiosInstance.post('/employees', data)
   }
 
   return (
-    <div className="page-container h-screen p-20 mt-10">
+    <div className="page-container p-20 mt-10">
       <div className="text-xl font-bold mb-5 flex space-x-5">
         <h1>Yeni Personel Ekleme Sayfası</h1>
       </div>
@@ -69,7 +96,7 @@ export default function CreatePersonPage() {
                     />
                     <input
                       placeholder="Doğum Tarihinizi Giriniz"
-                      type="text"
+                      type="date"
                       name="birthdate"
                       value={birthDate}
                       onChange={(e) => setBirthDate(e.target.value)}
@@ -85,7 +112,7 @@ export default function CreatePersonPage() {
                     />
                     <input
                       placeholder="Telefon Numaranızı Yazınız"
-                      type="text"
+                      type="number"
                       name="phonenumber"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
@@ -115,6 +142,12 @@ export default function CreatePersonPage() {
                       onChange={(e) => setMartialStatus(e.target.value)}
                       className="create-input"
                     />
+                    <select name="bloodGroup">{bloodGroup.name}</select>
+                    {/* {bloodGroups?.map((bloodGroup) => (
+                      <select name="bloodGroup" key={bloodGroup.id}>
+                        {bloodGroup.name}
+                      </select>
+                    ))} */}
                   </form>
                 </div>
               </div>

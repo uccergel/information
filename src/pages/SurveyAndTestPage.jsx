@@ -1,3 +1,7 @@
 export default function SurveyAndTestPage() {
-  return <h2>Survey And Test Page</h2>
+  return (
+    <div className="page-container mt-10">
+      <h2>Survey And Test Page</h2>
+    </div>
+  )
 }

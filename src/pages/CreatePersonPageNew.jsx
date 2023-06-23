@@ -1,7 +1,6 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { axiosInstance } from '../utils'
 
-const url = 'http://localhost:3000/employees'
 const initialFormValues = {
   name: '',
   surname: '',
@@ -24,16 +23,16 @@ export default function CreatePersonPage() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (form.name === '' || form.surname === '') {
       return false
     }
-    console.log(form)
+    await axiosInstance.post('/employees', form)
   }
 
   return (
-    <div className="page-container h-screen p-20 mt-10">
+    <div className="page-container p-20 mt-10">
       <div className="text-xl font-bold mb-5 flex space-x-5">
         <h1>Yeni Personel Ekleme Sayfası</h1>
       </div>

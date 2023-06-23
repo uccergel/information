@@ -1,6 +1,6 @@
 export default function PersonInfoPage() {
   return (
-    <div className="page-container mt-10">
+    <div className="page-container">
       <div className="flex  bg-[#284B63]/30 shadow-2xl p-4 mt-10">
         {/* bg-[#3C6E71]/30  orta alan alt kısmın alt kısmının sol kısmı giriş*/}
         <div className="w-2/12">
