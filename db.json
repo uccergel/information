@@ -79,6 +79,30 @@
       "educationId": 5,
       "martialStatusId": 1,
       "jobStationId": 1
+    },
+    {
+      "name": "Esma",
+      "surname": "Çergel",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroup": "",
+      "phoneNumber": "05556419917",
+      "email": "",
+      "address": "Ötüken Sokak No:6/6 D:12",
+      "martialStatus": "",
+      "id": 6
+    },
+    {
+      "name": "Esma",
+      "surname": "Çergel",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroup": "",
+      "phoneNumber": "05556419917",
+      "email": "",
+      "address": "asdasd",
+      "martialStatus": "",
+      "id": 7
     }
   ],
   "bloodGroup": [

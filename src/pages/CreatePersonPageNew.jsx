@@ -32,7 +32,7 @@ export default function CreatePersonPage() {
   }
 
   return (
-    <div className="page-container p-20 mt-10">
+    <div className="page-container p-20">
       <div className="text-xl font-bold mb-5 flex space-x-5">
         <h1>Yeni Personel Ekleme Sayfası</h1>
       </div>

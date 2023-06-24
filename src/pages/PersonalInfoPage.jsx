@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import SearchIcon from '../icons/SearchIcon'
+import UserPlusIcon from '../icons/UserPlusIcon'
 import { axiosInstance } from '../utils'
+import { NavLink } from 'react-router-dom'
+import EditIcon from '../icons/EditIcon'
 
 export default function PersonalInfoPage() {
   const [employees, setEmployees] = useState([])
@@ -35,18 +38,30 @@ export default function PersonalInfoPage() {
   }, [])
 
   return (
-    <div className="page-container mt-10 bg-[#3C6E71]/30">
-      <div className="w-screen">
-        <h1 className="font-bold text-4xl mb-10">Personel Listesi</h1>
-        <SearchIcon />
-        <div className="">
-          <input
-            type="search"
-            name=""
-            placeholder="Kimi Aramıştınız..."
-            className="bg-[#3C6E71]/10 mr-2 rounded-md placeholder:p-2 placeholder:text-black mb-4"
-            id=""
-          />
+    <div className="page-container bg-[#3C6E71]/30">
+      <div className="">
+        <h1 className="font-bold text-2xl mb-10">Personel Listesi</h1>
+        <div>
+          <div className="flex justify-between">
+            <div className="flex">
+              <input
+                type="search"
+                name=""
+                placeholder="..."
+                className="bg-[#3C6E71]/10 mr-2 rounded-md placeholder:p-2 focus:p-2 placeholder:text-black mb-4"
+                id=""
+              />
+              <button className="hover:bg-[#3C6E71]/30 rounded-full p-2">
+                <SearchIcon />
+              </button>
+            </div>
+            <NavLink
+              to="/create-person"
+              className="hover:bg-[#3C6E71]/30 rounded-full p-2"
+            >
+              <UserPlusIcon />
+            </NavLink>
+          </div>
           <table>
             <thead>
               <tr>
@@ -102,6 +117,9 @@ export default function PersonalInfoPage() {
                         (education) => education?.id === employee?.educationId
                       )?.name
                     }
+                  </td>
+                  <td>
+                    <EditIcon />
                   </td>
                 </tr>
               ))}

@@ -42,11 +42,13 @@ export default function CreatePersonPage() {
       address,
       martialStatus
     }
-    await axiosInstance.post('/employees', data)
+    await axiosInstance
+      .post('/employees', data)
+      .catch((err) => console.log(err))
   }
 
   return (
-    <div className="page-container p-20 mt-10">
+    <div className="page-container p-20">
       <div className="text-xl font-bold mb-5 flex space-x-5">
         <h1>Yeni Personel Ekleme Sayfası</h1>
       </div>
@@ -142,9 +144,23 @@ export default function CreatePersonPage() {
                       onChange={(e) => setMartialStatus(e.target.value)}
                       className="create-input"
                     />
-                    <select name="bloodGroup">{bloodGroup.name}</select>
+                    <select
+                      name="bloodGroup"
+                      defaultValue="Seçiniz"
+                      // value={bloodGroups?.map((bloodGroup) =>
+                      //   console.log(bloodGroup.name)
+                      // )}
+                    >
+                      <option
+                        value={bloodGroups?.map(
+                          (bloodGroup) => bloodGroup.name
+                        )}
+                      >
+                        {/* {bloodGroups?.map((bloodGroup) => bloodGroup.name)} */}
+                      </option>
+                    </select>
                     {/* {bloodGroups?.map((bloodGroup) => (
-                      <select name="bloodGroup" key={bloodGroup.id}>
+                      <select value={} name="bloodGroup" key={bloodGroup.id}>
                         {bloodGroup.name}
                       </select>
                     ))} */}

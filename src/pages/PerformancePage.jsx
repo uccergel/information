@@ -3,7 +3,7 @@ import PersonInfoPage from './PersonInfoPage'
 
 export default function PerformancePage() {
   return (
-    <div className="page-container flex space-x-5 mt-10">
+    <div className="page-container">
       <div className="flex flex-col w-screen">
         <div className="flex justify-content space-x-5 mt-2 mb-3 p-4 mx-auto">
           <NavLink to="person-info" className="performance-page-content">

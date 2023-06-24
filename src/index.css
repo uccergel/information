@@ -7,7 +7,7 @@
     @apply max-w-5xl mx-auto mb-10 p-5;
   }
   .page-container {
-    @apply max-w-7xl rounded-e-xl bg-[#3C6E71]/30 shadow-2xl h-auto min-h-[900px] p-10;
+    @apply max-w-5xl rounded-e-xl bg-[#3C6E71]/30  h-auto min-h-[900px] p-10;
   }
   .register_card {
     @apply rounded-xl inset-2/4 m-auto flex w-1/6 flex-col border-[#284B63] p-3 shadow-xl bg-[#3C6E71]/40;
@@ -22,6 +22,6 @@
     @apply w-64 rounded-lg text-center bg-[#3C6E71]/80;
   }
   .nav-link {
-    @apply space-x-4 my-auto hover:bg-[#284B63]/40 hover:shadow-xl rounded-lg p-2 font-semibold hover:font-bold;
+    @apply space-x-4 my-auto hover:bg-[#284B63]/40 hover:shadow-xl rounded-lg p-2 font-semibold hover:font-bold flex;
   }
 }
