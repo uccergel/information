@@ -19,9 +19,9 @@
     @apply font-bold text-xl hover:shadow-xl hover:bg-[#3C6E71]/30 p-3 rounded-lg cursor-pointer;
   }
   .create-input {
-    @apply w-64 rounded-lg text-center bg-[#3C6E71]/80;
+    @apply w-64 rounded-lg text-center bg-[#3C6E71]/80  placeholder:text-slate-200;
   }
   .nav-link {
-    @apply space-x-4 my-auto hover:bg-[#284B63]/40 hover:shadow-xl rounded-lg p-2 font-semibold hover:font-bold flex;
+    @apply space-x-4  hover:bg-[#284B63]/40 hover:shadow-xl rounded-lg p-2 font-semibold hover:font-bold flex;
   }
 }

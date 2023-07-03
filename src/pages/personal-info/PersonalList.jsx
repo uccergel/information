@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import SearchIcon from '../icons/SearchIcon'
-import UserPlusIcon from '../icons/UserPlusIcon'
-import { axiosInstance } from '../utils'
+import SearchIcon from '../../icons/SearchIcon'
+import UserPlusIcon from '../../icons/UserPlusIcon'
+import { axiosInstance } from '../../utils'
 import { NavLink } from 'react-router-dom'
-import EditIcon from '../icons/EditIcon'
+import EditIcon from '../../icons/EditIcon'
 
-export default function PersonalInfoPage() {
+export default function PersonalListPage() {
   const [employees, setEmployees] = useState([])
   const [jobStation, setJobStation] = useState([])
   const [bloodGroup, setBloodGroup] = useState([])
@@ -119,7 +119,9 @@ export default function PersonalInfoPage() {
                     }
                   </td>
                   <td>
-                    <EditIcon />
+                    <button>
+                      <EditIcon />
+                    </button>
                   </td>
                 </tr>
               ))}
