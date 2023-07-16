@@ -1,3 +1,7 @@
 export default function HomePage() {
-  return <h2>Ana Sayfa</h2>
+  return (
+    <div className="page-container">
+      <h2>Ana Sayfa</h2>
+    </div>
+  )
 }

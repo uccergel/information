@@ -11,6 +11,20 @@ export default function PersonalListPage() {
   const [bloodGroup, setBloodGroup] = useState([])
   const [martialStatus, setMartialStatus] = useState([])
   const [education, setEducation] = useState([])
+  const [filterEmployee, setFilterEmployee] = useState('')
+
+  const theadItems = (
+    <tr>
+      <th className="text-center p-3 m-1">Adı Soyadı</th>
+      <th className="text-center p-3 m-1">E-Mail</th>
+      <th className="text-center p-3 m-1">Telefon Numarası</th>
+      <th className="text-center p-3 m-1">Doğum Tarihi</th>
+      <th className="text-center p-3 m-1">Birimi</th>
+      <th className="text-center p-3 m-1">Kan Grubu</th>
+      <th className="text-center p-3 m-1">Medeni Durumu</th>
+      <th className="text-center p-3 m-1">Eğitim Durumu</th>
+    </tr>
+  )
 
   useEffect(() => {
     axiosInstance
@@ -20,8 +34,6 @@ export default function PersonalListPage() {
     axiosInstance
       .get('/jobStation')
       .then((res) => setJobStation(res.data))
-      // .then((res) => res.data)
-      // .then(setJobStations)
       .catch((err) => console.log(err))
     axiosInstance
       .get('/bloodGroup')
@@ -37,8 +49,17 @@ export default function PersonalListPage() {
       .catch((err) => console.log(err))
   }, [])
 
+  const filtered = employees.filter((employee) => {
+    return Object.keys(employee).some((key) =>
+      employee[key]
+        .toString()
+        .toLowerCase()
+        .includes(filterEmployee.toLocaleLowerCase())
+    )
+  })
+
   return (
-    <div className="page-container bg-[#3C6E71]/30">
+    <div className="p-5 bg-[#3C6E71]/30">
       <div className="">
         <h1 className="font-bold text-2xl mb-10">Personel Listesi</h1>
         <div>
@@ -46,12 +67,15 @@ export default function PersonalListPage() {
             <div className="flex">
               <input
                 type="search"
-                name=""
-                placeholder="..."
+                placeholder="Aradığınız Personel"
                 className="bg-[#3C6E71]/10 mr-2 rounded-md placeholder:p-2 focus:p-2 placeholder:text-black mb-4"
-                id=""
+                value={filterEmployee}
+                onChange={(event) => setFilterEmployee(event.target.value)}
               />
-              <button className="hover:bg-[#3C6E71]/30 rounded-full p-2">
+              <button
+                // onClick={filtered}
+                className="hover:bg-[#3C6E71]/30 rounded-full p-2"
+              >
                 <SearchIcon />
               </button>
             </div>
@@ -62,19 +86,8 @@ export default function PersonalListPage() {
               <UserPlusIcon />
             </NavLink>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th className="text-center p-3 m-1">Adı Soyadı</th>
-                <th className="text-center p-3 m-1">E-Mail</th>
-                <th className="text-center p-3 m-1">Telefon Numarası</th>
-                <th className="text-center p-3 m-1">Doğum Tarihi</th>
-                <th className="text-center p-3 m-1">Birimi</th>
-                <th className="text-center p-3 m-1">Kan Grubu</th>
-                <th className="text-center p-3 m-1">Medeni Durumu</th>
-                <th className="text-center p-3 m-1">Eğitim Durumu</th>
-              </tr>
-            </thead>
+          <table className="mb-10">
+            <thead>{theadItems}</thead>
             <tbody>
               {employees?.map((employee) => (
                 <tr
@@ -84,7 +97,9 @@ export default function PersonalListPage() {
                   <td className="p-1">
                     {employee.name} {employee.surname}
                   </td>
-                  <td className="p-1 text-center">{employee.eMail}</td>
+                  <td className="p-1 text-center hover:font-medium hover:p-2 hover:rounded-xl">
+                    {employee.eMail}
+                  </td>
                   <td className="p-1 text-center">{employee.phoneNumber}</td>
                   <td className="p-1 text-center">{employee.birthDate}</td>
                   <td className="p-1 text-center">
@@ -127,6 +142,9 @@ export default function PersonalListPage() {
               ))}
             </tbody>
           </table>
+          <span className="font-semibold">
+            Toplam Personel Sayısı: {employees.length}
+          </span>
         </div>
       </div>
     </div>

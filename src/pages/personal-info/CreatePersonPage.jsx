@@ -12,9 +12,9 @@ export default function CreatePersonPage() {
   const [address, setAddress] = useState('')
   const [martialStatus, setMartialStatus] = useState([])
   const [education, setEducation] = useState([])
-  const [selectedEducation, setSelectedEducation] = useState([])
-  const [selectedMartialStatus, setSelectedMartialStatus] = useState([])
-  const [selectedBloodGroup, setSelectedBloodGroup] = useState([])
+  const [educationId, setEducationId] = useState('')
+  const [martialStatusId, setMartialStatusId] = useState('')
+  const [bloodGroupId, setBloodGroupId] = useState('')
 
   // useEffect(() => {
   //   const eslestir = () => {
@@ -44,15 +44,42 @@ export default function CreatePersonPage() {
     const fetchData = async () => {
       await axiosInstance
         .get('bloodGroup')
-        .then((response) => setBloodGroups(response.data))
+        .then((response) =>
+          setBloodGroups(
+            response.data.map((bloodGroups) => {
+              return {
+                id: bloodGroups.id,
+                name: bloodGroups.name
+              }
+            })
+          )
+        )
         .catch((err) => console.log('Veri Bulunamadı', err))
       await axiosInstance
         .get('martialStatus')
-        .then((response) => setMartialStatus(response.data))
+        .then((response) =>
+          setMartialStatus(
+            response.data.map((martialStatus) => {
+              return {
+                id: martialStatus.id,
+                name: martialStatus.name
+              }
+            })
+          )
+        )
         .catch((err) => console.log('veri bulunamadı...', err))
       await axiosInstance
         .get('education')
-        .then((response) => setEducation(response.data))
+        .then((response) =>
+          setEducation(
+            response.data.map((education) => {
+              return {
+                id: education.id,
+                name: education.name
+              }
+            })
+          )
+        )
         .catch((err) => console.log('veri bulunamadı', err))
     }
     fetchData()
@@ -63,16 +90,15 @@ export default function CreatePersonPage() {
       surname,
       tckn,
       birthDate,
-      bloodGroups,
+      bloodGroupId,
       phoneNumber,
       email,
       address,
-      martialStatus,
+      martialStatusId,
       education
     }
     await axiosInstance.post('employees', data).catch((err) => console.log(err))
   }
-
   return (
     <div className="page-container p-20">
       <div className="text-xl font-bold mb-5 flex space-x-5">
@@ -114,7 +140,7 @@ export default function CreatePersonPage() {
                   <span className="font-semibold">TC Kimlik Numarası:</span>
                   <input
                     placeholder="TCKN Yazınız"
-                    type="text"
+                    type="number"
                     name="tckn"
                     value={tckn}
                     onChange={(e) => setTckn(e.target.value)}
@@ -137,8 +163,8 @@ export default function CreatePersonPage() {
                   <p className="font-semibold">Kan Grubu:</p>
                   <select
                     className="create-input text-slate-200"
-                    value={selectedBloodGroup}
-                    onChange={(e) => setSelectedBloodGroup(e.target.value)}
+                    value={bloodGroupId}
+                    onChange={(e) => setBloodGroupId(e.target.value)}
                   >
                     <option>Seçiniz</option>
                     {bloodGroups?.map((bloodGroup) => (
@@ -166,7 +192,7 @@ export default function CreatePersonPage() {
                   <input
                     placeholder="E-Posta Adresinizi Yazınız"
                     type="text"
-                    name="emaik"
+                    name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="create-input"
@@ -188,8 +214,8 @@ export default function CreatePersonPage() {
                 <div className="flex justify-between">
                   <p className="font-medium">Medeni Durumu:</p>
                   <select
-                    value={selectedMartialStatus}
-                    onChange={(e) => setSelectedMartialStatus(e.target.value)}
+                    value={martialStatusId}
+                    onChange={(e) => setMartialStatusId(e.target.value)}
                     className="create-input text-slate-200"
                   >
                     <option>Seçiniz</option>
@@ -211,8 +237,8 @@ export default function CreatePersonPage() {
                 <div className="flex justify-between">
                   <h2 className="font-medium">Eğitim Durumu:</h2>
                   <select
-                    value={selectedEducation}
-                    onChange={(e) => setSelectedEducation(e.target.value)}
+                    value={educationId}
+                    onChange={(e) => setEducationId(e.target.value)}
                     className="create-input text-slate-200"
                   >
                     <option>Seçiniz</option>
@@ -233,7 +259,7 @@ export default function CreatePersonPage() {
         </div>
       </div>
       <button
-        onClick={onSave}
+        onClick={onSave()}
         className="bg-[#3C6E71] text-white rounded-md p-1 mr-72"
         disabled={!name || !surname}
       >

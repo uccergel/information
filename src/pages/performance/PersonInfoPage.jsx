@@ -1,31 +1,56 @@
+import LeftArrowIcon from '../../icons/LeftArrowIcon'
+import RightArrowIcon from '../../icons/RightArrowIcon'
+
 export default function PersonInfoPage() {
+  const year = 2023
+  const months = [
+    { name: 'Ocak', id: 1 },
+    { name: 'Şubat', id: 2 },
+    { name: 'Mart', id: 3 },
+    { name: 'Nisan', id: 4 },
+    { name: 'Mayıs', id: 5 },
+    { name: 'Haziran', id: 6 },
+    { name: 'Temmuz', id: 7 },
+    { name: 'Ağustos', id: 8 },
+    { name: 'Eylül', id: 9 },
+    { name: 'Ekim', id: 10 },
+    { name: 'Kasım', id: 11 },
+    { name: 'Aralık', id: 12 }
+  ]
+  // const previouslyYear = () => {
+  //   return year++
+  // }
+  // const nextYear = () => {
+  //   return year--
+  // }
   return (
-    <div className="page-container">
-      <div className="flex  bg-[#284B63]/30 shadow-2xl p-4 mt-10">
-        {/* bg-[#3C6E71]/30  orta alan alt kısmın alt kısmının sol kısmı giriş*/}
+    <div>
+      <div className="flex bg-[#284B63]/30 shadow-2xl p-4 mt-10">
         <div className="w-2/12">
-          <h3 className="font-bold text-xl">
-            {/* <LeftArrowIcon /> */}
-            2022
-            {/* <RightArrowIcon /> */}
-          </h3>
+          <div className="space-x-2 flex font-bold text-xl mb-3">
+            <button
+            // onClick={previouslyYear()}
+            >
+              <LeftArrowIcon />
+            </button>
+            <span>{year}</span>
+            <button
+            // onClick={nextYear()}
+            >
+              <RightArrowIcon />
+            </button>
+          </div>
           <ul>
-            <li className="hover:bg-slate-600">Ocak</li>
-            <li>Şubat</li>
-            <li>Mart</li>
-            <li>Nisan</li>
-            <li>Mayıs</li>
-            <li>Haziran</li>
-            <li>Temmuz</li>
-            <li>Ağustos</li>
-            <li>Eylül</li>
-            <li>Ekim</li>
-            <li>Kasım</li>
-            <li>Aralık</li>
+            {months?.map((month) => (
+              <li
+                key={month.id}
+                className="hover:bg-slate-600 hover:rounded-lg p-2 hover:text-white"
+              >
+                {month.name}
+              </li>
+            ))}
           </ul>
         </div>
-        {/* <!-- orta alan alt kısmın alt kısmının sol kısmı bitiş -->
-    <!-- orta alan alt kısmın alt kısmının sağ kısmı giriş --> */}
         <div className="w-10/12">
           <table className="table-auto">
             <thead>

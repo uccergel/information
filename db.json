@@ -18,8 +18,8 @@
     },
     {
       "id": 2,
-      "name": "testname2",
-      "surname": "testsurname2",
+      "name": "name2",
+      "surname": "surname2",
       "eMail": "ee@ee.com",
       "phoneNumber": "5555555555",
       "tckn": "11111111111",
@@ -34,8 +34,8 @@
     },
     {
       "id": 3,
-      "name": "testname3",
-      "surname": "testsurname3",
+      "name": "name3",
+      "surname": "surname3",
       "eMail": "ee@ee.com",
       "phoneNumber": "5555555555",
       "tckn": "11111111111",
@@ -50,8 +50,8 @@
     },
     {
       "id": 4,
-      "name": "testname4",
-      "surname": "testsurname4",
+      "name": "name4",
+      "surname": "surname4",
       "eMail": "ee@ee.com",
       "phoneNumber": "5555555555",
       "tckn": "11111111111",
@@ -66,8 +66,8 @@
     },
     {
       "id": 5,
-      "name": "testname5",
-      "surname": "testsurname5",
+      "name": "name5",
+      "surname": "surname5",
       "eMail": "ee@ee.com",
       "phoneNumber": "5555555555",
       "tckn": "11111111111",
@@ -79,30 +79,6 @@
       "educationId": 5,
       "martialStatusId": 1,
       "jobStationId": 1
-    },
-    {
-      "name": "Esma",
-      "surname": "Çergel",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroup": "",
-      "phoneNumber": "05556419917",
-      "email": "",
-      "address": "Ötüken Sokak No:6/6 D:12",
-      "martialStatus": "",
-      "id": 6
-    },
-    {
-      "name": "Esma",
-      "surname": "Çergel",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroup": "",
-      "phoneNumber": "05556419917",
-      "email": "",
-      "address": "asdasd",
-      "martialStatus": "",
-      "id": 7
     }
   ],
   "bloodGroup": [

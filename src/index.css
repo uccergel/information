@@ -7,7 +7,7 @@
     @apply max-w-5xl mx-auto mb-10 p-5;
   }
   .page-container {
-    @apply max-w-5xl rounded-e-xl bg-[#3C6E71]/30  h-auto min-h-[900px] p-10;
+    @apply max-w-7xl rounded-e-xl bg-[#3C6E71]/30  h-auto w-screen min-h-[900px] p-10;
   }
   .register_card {
     @apply rounded-xl inset-2/4 m-auto flex w-1/6 flex-col border-[#284B63] p-3 shadow-xl bg-[#3C6E71]/40;

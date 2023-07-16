@@ -4,9 +4,9 @@ import RoutesNav from './components/RoutesNav'
 
 function App() {
   return (
-    <div className="max-w-full">
+    <div className="min-w-full">
       <div className="flex">
-        <div className="">
+        <div>
           <Header />
         </div>
         <div>
