@@ -1,5 +1,4 @@
-import LeftArrowIcon from '../../icons/LeftArrowIcon'
-import RightArrowIcon from '../../icons/RightArrowIcon'
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
 
 export default function PersonInfoPage() {
   const year = 2023
@@ -31,13 +30,13 @@ export default function PersonInfoPage() {
             <button
             // onClick={previouslyYear()}
             >
-              <LeftArrowIcon />
+              <IconArrowLeft />
             </button>
             <span>{year}</span>
             <button
             // onClick={nextYear()}
             >
-              <RightArrowIcon />
+              <IconArrowRight />
             </button>
           </div>
           <ul>

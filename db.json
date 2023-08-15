@@ -79,6 +79,168 @@
       "educationId": 5,
       "martialStatusId": 1,
       "jobStationId": 1
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [],
+      "id": 6
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [],
+      "id": 7
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [],
+      "id": 8
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [
+        {
+          "id": 1,
+          "name": "İlkokul"
+        },
+        {
+          "id": 2,
+          "name": "Ortaokul"
+        },
+        {
+          "id": 3,
+          "name": "Lise"
+        },
+        {
+          "id": 4,
+          "name": "Ön Lisans"
+        },
+        {
+          "id": 5,
+          "name": "Lisans"
+        },
+        {
+          "id": 6,
+          "name": "Yüksek Lisans"
+        },
+        {
+          "id": 7,
+          "name": "Doktora"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [],
+      "id": 10
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [],
+      "id": 11
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [],
+      "id": 12
+    },
+    {
+      "name": "",
+      "surname": "",
+      "tckn": "",
+      "birthDate": "",
+      "bloodGroupId": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "martialStatusId": "",
+      "education": [
+        {
+          "id": 1,
+          "name": "İlkokul"
+        },
+        {
+          "id": 2,
+          "name": "Ortaokul"
+        },
+        {
+          "id": 3,
+          "name": "Lise"
+        },
+        {
+          "id": 4,
+          "name": "Ön Lisans"
+        },
+        {
+          "id": 5,
+          "name": "Lisans"
+        },
+        {
+          "id": 6,
+          "name": "Yüksek Lisans"
+        },
+        {
+          "id": 7,
+          "name": "Doktora"
+        }
+      ],
+      "id": 13
     }
   ],
   "bloodGroup": [

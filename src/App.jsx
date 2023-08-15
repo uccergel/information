@@ -4,16 +4,10 @@ import RoutesNav from './components/RoutesNav'
 
 function App() {
   return (
-    <div className="min-w-full">
-      <div className="flex">
-        <div>
-          <Header />
-        </div>
-        <div>
-          <RoutesNav />
-        </div>
-      </div>
-      <div>
+    <div className="max-w-5xl mx-auto">
+      <div className="flex flex-col space-y-4">
+        <Header />
+        <RoutesNav />
         <Footer />
       </div>
     </div>

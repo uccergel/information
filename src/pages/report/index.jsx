@@ -1,3 +1,3 @@
 export default function ReportPage() {
-  return <h2>Raporlama Sayfası</h2>
+  return <h2 className="page-container">Raporlama Sayfası</h2>
 }
