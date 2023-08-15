@@ -28,9 +28,9 @@
       "startDateOfContactCenter": "02.02.2015",
       "startDateOfEmployment": "02.02.2015",
       "bloodGroupId": 1,
-      "educationId": 5,
-      "martialStatusId": 1,
-      "jobStationId": 1
+      "educationId": 2,
+      "martialStatusId": 2,
+      "jobStationId": 4
     },
     {
       "id": 3,
@@ -59,10 +59,10 @@
       "address": "jnoınınoınnınuıunınıunoınoınoıun",
       "startDateOfContactCenter": "02.02.2015",
       "startDateOfEmployment": "02.02.2015",
-      "bloodGroupId": 1,
-      "educationId": 5,
-      "martialStatusId": 1,
-      "jobStationId": 1
+      "bloodGroupId": 6,
+      "educationId": 1,
+      "martialStatusId": 2,
+      "jobStationId": 2
     },
     {
       "id": 5,
@@ -75,172 +75,10 @@
       "address": "jnoınınoınnınuıunınıunoınoınoıun",
       "startDateOfContactCenter": "02.02.2015",
       "startDateOfEmployment": "02.02.2015",
-      "bloodGroupId": 1,
-      "educationId": 5,
-      "martialStatusId": 1,
-      "jobStationId": 1
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [],
-      "id": 6
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [],
-      "id": 7
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [],
-      "id": 8
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [
-        {
-          "id": 1,
-          "name": "İlkokul"
-        },
-        {
-          "id": 2,
-          "name": "Ortaokul"
-        },
-        {
-          "id": 3,
-          "name": "Lise"
-        },
-        {
-          "id": 4,
-          "name": "Ön Lisans"
-        },
-        {
-          "id": 5,
-          "name": "Lisans"
-        },
-        {
-          "id": 6,
-          "name": "Yüksek Lisans"
-        },
-        {
-          "id": 7,
-          "name": "Doktora"
-        }
-      ],
-      "id": 9
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [],
-      "id": 10
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [],
-      "id": 11
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [],
-      "id": 12
-    },
-    {
-      "name": "",
-      "surname": "",
-      "tckn": "",
-      "birthDate": "",
-      "bloodGroupId": "",
-      "phoneNumber": "",
-      "email": "",
-      "address": "",
-      "martialStatusId": "",
-      "education": [
-        {
-          "id": 1,
-          "name": "İlkokul"
-        },
-        {
-          "id": 2,
-          "name": "Ortaokul"
-        },
-        {
-          "id": 3,
-          "name": "Lise"
-        },
-        {
-          "id": 4,
-          "name": "Ön Lisans"
-        },
-        {
-          "id": 5,
-          "name": "Lisans"
-        },
-        {
-          "id": 6,
-          "name": "Yüksek Lisans"
-        },
-        {
-          "id": 7,
-          "name": "Doktora"
-        }
-      ],
-      "id": 13
+      "bloodGroupId": 5,
+      "educationId": 6,
+      "martialStatusId": 2,
+      "jobStationId": 2
     }
   ],
   "bloodGroup": [
